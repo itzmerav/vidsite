@@ -5,40 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video 1</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: #000;
-        }
         .video-container {
+            padding: 50% 0 0 0;
             position: relative;
-            width: 80%; /* Adjust width as needed */
-            max-width: 800px; /* Adjust max-width as needed */
-            padding-top: 56.25%; /* 16:9 aspect ratio */
-            margin: 20px;
+            width: 100%;
+            height: 100%;
         }
-        video {
+        iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            display: block;
         }
     </style>
 </head>
 <body>
     <!-- Video 1 Embed -->
-    <div class="video-container">
-        <video controls autoplay loop muted>
-            <source src="https://github.com/itzmerav/vidsite/raw/main/CULTURE%20(5).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div id="videoContainer1" class="video-container">
+        <iframe
+            id="vimeoPlayer1"
+            src="CULTURE (5).mp4"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="WhatsApp Video 2024-09-03 at 01.26.48_443e22d1">
+        </iframe>
     </div>
-</body>
-</html>
