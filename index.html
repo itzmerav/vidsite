@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Page</title>
+    <title>My Video Page</title>
     <style>
         body {
             margin: 0;
@@ -16,22 +16,22 @@
             background: #000;
         }
         .video-container {
-            position: relative;
-            width: 80%;
-            max-width: 800px;
-            margin: 20px;
+            width: 90%; /* Adjust width to fit the screen */
+            max-width: 800px; /* Optional: set a maximum width */
+            height: auto; /* Maintain aspect ratio */
+            margin: 20px 0; /* Space around video */
         }
         video {
             width: 100%;
-            height: auto;
+            height: auto; /* Maintain aspect ratio */
             display: block;
         }
     </style>
 </head>
 <body>
     <div class="video-container">
-        <video autoplay loop muted>
-            <source src="CULTURE (5).mp4" type="video/mp4">
+        <video autoplay loop muted playsinline>
+            <source src="https://github.com/itzmerav/vidsite/raw/main/CULTURE%20(5).mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
