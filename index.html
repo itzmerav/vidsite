@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Page</title>
+    <title>Fullscreen Video</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: #000;
+            overflow: hidden; /* Prevent scrollbars */
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
         }
         .video-container {
-            position: relative;
-            width: 80vw;  /* Adjust width */
-            height: 45vh; /* Adjust height based on the aspect ratio */
-            max-width: 800px; /* Optional: maximum width */
-            max-height: 450px; /* Optional: maximum height */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
         }
         iframe {
             position: absolute;
@@ -34,8 +32,8 @@
 <body>
     <div class="video-container">
         <iframe 
-            src="CULTURE (5).mp4"
-            allow="autoplay; fullscreen; picture-in-picture"
+            src="CULTURE (5).mp4" 
+            allow="autoplay; fullscreen" 
             title="CULTURE (5)"
         ></iframe>
     </div>
