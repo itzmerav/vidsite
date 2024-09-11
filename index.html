@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video 1</title>
+    <title>Video Page</title>
     <style>
-        .video-container {
-            padding: 50% 0 0 0;
-            position: relative;
-            width: 100%;
-            height: 100%;
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #000;
         }
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px;
+        }
+        video {
             width: 100%;
-            height: 100%;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- Video 1 Embed -->
-    <div id="videoContainer1" class="video-container">
-        <iframe
-            id="vimeoPlayer1"
-            src="CULTURE (5).mp4"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            title="WhatsApp Video 2024-09-03 at 01.26.48_443e22d1">
-        </iframe>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="CULTURE (5).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
+</body>
+</html>
