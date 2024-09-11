@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Video Page</title>
+    <title>Video Page</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             background: #000;
         }
         .video-container {
-            width: 90%; /* Adjust width to fit the screen */
-            max-width: 800px; /* Optional: set a maximum width */
-            height: auto; /* Maintain aspect ratio */
-            margin: 20px 0; /* Space around video */
+            position: relative;
+            width: 80vw;  /* Adjust width */
+            height: 45vh; /* Adjust height based on the aspect ratio */
+            max-width: 800px; /* Optional: maximum width */
+            max-height: 450px; /* Optional: maximum height */
         }
-        video {
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            display: block;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
     <div class="video-container">
-        <video autoplay loop muted playsinline>
-            <source src="https://github.com/itzmerav/vidsite/raw/main/CULTURE%20(5).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <iframe 
+            src="CULTURE (5).mp4"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="CULTURE (5)"
+        ></iframe>
     </div>
 </body>
 </html>
