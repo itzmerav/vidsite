@@ -19,23 +19,22 @@
             width: 100vw;
             height: 100vh;
         }
-        iframe {
+        video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover; /* Ensure video covers the container */
         }
     </style>
 </head>
 <body>
     <div class="video-container">
-        <iframe 
-            src="CULTURE (5).mp4" 
-            allow="autoplay; fullscreen" 
-            title="CULTURE (5)"
-        ></iframe>
+        <video autoplay loop muted>
+            <source src="CULTURE (5).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </body>
 </html>
