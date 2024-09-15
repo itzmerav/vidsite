@@ -3,39 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Video</title>
+    <title>Video Overlay</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevent scrollbars */
-            height: 100vh; /* Full viewport height */
-            width: 100vw; /* Full viewport width */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #000;
-        }
         .video-container {
             position: relative;
-            width: 80%; /* Adjust width as needed */
-            height: auto; /* Maintain aspect ratio */
-            max-width: 100%;
-            max-height: 100%;
-        }
-        video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure video covers the container */
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
     <div class="video-container">
-        <video autoplay loop muted>
-            <source src="0911.mp4" type="video/mp4">
+        <video id="myVideo" autoplay muted>
+            <source src="https://itzmerav.github.io/vidsite/0911.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const skipDuration = 10; // Skip the first 10 seconds
+        const loopDuration = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+        function resetVideo() {
+            video.currentTime = skipDuration;
+            video.play();
+        }
+
+        // Event listener for when the video ends
+        video.addEventListener('ended', function() {
+            resetVideo();
+        });
+
+        // Initial setup to start the video correctly
+        video.addEventListener('loadedmetadata', function() {
+            resetVideo();
+        });
+
+        // Periodic reset every 5 minutes
+        setInterval(() => {
+            resetVideo();
+        }, loopDuration);
+    </script>
 </body>
 </html>
