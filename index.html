@@ -34,22 +34,29 @@
         const skipDuration = 10; // Skip the first 10 seconds
         const loopDuration = 5 * 60 * 1000; // 5 minutes in milliseconds
 
+        // Function to reset video to a specific start time
         function resetVideo() {
             video.currentTime = skipDuration;
             video.play();
         }
 
-        // Event listener for when the video ends
-        video.addEventListener('ended', function() {
-            resetVideo();
-        });
+        // Function to handle looping
+        function handleLoop() {
+            const endTime = video.duration - skipDuration;
+            video.addEventListener('timeupdate', function() {
+                if (video.currentTime >= endTime) {
+                    resetVideo();
+                }
+            });
+        }
 
-        // Initial setup to start the video correctly
+        // Event listener for when the video metadata is loaded
         video.addEventListener('loadedmetadata', function() {
-            resetVideo();
+            handleLoop();
+            resetVideo(); // Start video playback immediately
         });
 
-        // Periodic reset every 5 minutes
+        // Reset video every 5 minutes
         setInterval(() => {
             resetVideo();
         }, loopDuration);
